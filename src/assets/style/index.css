@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/**
+* IranSans font-face
+*
+* if IranSans licence not present or the fonts are missing, remove this font-face and
+* don't forget to change the --font-face variable
+*/
+@font-face {
+  font-family: "IranSans";
+  src: url("../fonts/irsans.eot");
+  src: url("../fonts/irsans.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/irsans.woff") format("woff"),
+    url("../fonts/irsans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+* Yekan font-face
+*
+* if IranSans licence not present or the fonts are missing, use this font-face or
+* you can use any other fonts, copy a single .ttf file or other extentions if avalible,
+* and change the font path
+* NOTE: don't forget to change --font-face variable
+* 
+*/
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/Yekan.eot");
+  src: url("../fonts/Yekan.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Yekan.woff2") format("woff2"),
+    url("../fonts/Yekan.woff") format("woff"),
+    url("../fonts/Yekan.otf") format("opentype"),
+    url("../fonts/Yekan.ttf") format("truetype"),
+    url("../fonts/Yekan.svg#Yekan") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-face: "IranSans";
+}
+
+body {
+  font-family: var(--font-face);
+}
