@@ -43,5 +43,5 @@
 }
 
 body {
-  font-family: var(--font-face);
+  font-family: var(--font-face) !important;
 }
