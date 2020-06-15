@@ -1,13 +1,8 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">خانه</router-link> |
-      <router-link to="/about">درباره</router-link>
-    </div>-->
-
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <router-link class="navbar-item except" to="/">
+        <router-link class="navbar-item" to="/">
           <img src="./assets/logo.png" alt="Website logo" />
         </router-link>
         <a
@@ -25,10 +20,24 @@
         </a>
       </div>
 
-      <div id="navMenu" class="navbar-menu" v-bind:class="isActive ? 'is-active' : ''">
-        <div class="navbar-start">
-          <router-link class="navbar-item has-text-primary" to="/">صفحه اصلی</router-link>
-          <router-link class="navbar-item" to="/avout">درباره من</router-link>
+      <div
+        id="navMenu"
+        class="navbar-menu"
+        v-bind:class="isActive ? 'is-active' : ''"
+      >
+        <div class="navbar-end">
+          <router-link
+            class="navbar-item"
+            to="/"
+            @click.native="isActive = false"
+            >صفحه اصلی</router-link
+          >
+          <router-link
+            class="navbar-item"
+            to="/avout"
+            @click.native="isActive = false"
+            >درباره من</router-link
+          >
         </div>
       </div>
     </nav>
@@ -41,15 +50,23 @@
 export default {
   data() {
     return {
-      isActive: false
+      isActive: false,
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss">
 @import "assets/style/index.css";
+@import "assets/style/my-bulma/sass/mybulma.scss";
 body {
   direction: rtl;
+}
+.router-link-exact-active {
+  color: $primary !important;
+}
+.navbar-burger {
+  margin-right: auto !important;
+  margin-left: 0 !important;
 }
 </style>
