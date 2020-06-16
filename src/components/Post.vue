@@ -4,25 +4,25 @@
       <div class="frame">
         <img :src="post.indicatorImage" alt />
       </div>
-      <h4 class="title is-5">{{post.title}}</h4>
-      <p class="summary">{{post.body}}</p>
+      <h4 class="title is-5">{{ post.title }}</h4>
+      <p class="summary">{{ post.body }}</p>
       <div class="info-container">
-        <i data-feather="calendar"></i>
-        <span>{{post.date}}</span>
-        <i data-feather="clock" class="mr-4"></i>
-        <span>{{post.time}}</span>
-        <i data-feather="message-square" class="mr-4"></i>
-        <span>{{post.commentsCount}}</span>
+        <i class="far fa-calendar ml-1"></i>
+        <span>{{ post.date }}</span>
+        <i class="far fa-clock ml-1 mr-4"></i>
+        <span>{{ post.time }}</span>
+        <i class="far fa-comment-alt ml-1 mr-4"></i>
+        <span>{{ post.commentsCount }}</span>
       </div>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
   name: "Post",
   props: {
-    post: Object
-  }
+    post: Object,
+  },
 };
 </script>
