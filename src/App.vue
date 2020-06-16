@@ -34,7 +34,7 @@
           >
           <router-link
             class="navbar-item"
-            to="/avout"
+            to="/about"
             @click.native="isActive = false"
             >درباره من</router-link
           >
