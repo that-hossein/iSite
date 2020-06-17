@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <nav
+      class="navbar is-white is-fixed-top has-shadow"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">
           <img src="./assets/logo.png" alt="Website logo" />
@@ -11,8 +15,8 @@
           aria-label="menu"
           aria-expanded="false"
           data-target="navMenu"
-          v-bind:class="isActive ? 'is-active' : ''"
-          v-on:click="isActive = !isActive"
+          v-bind:class="navShown ? 'is-active' : ''"
+          v-on:click="navShown = !navShown"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -20,29 +24,17 @@
         </a>
       </div>
 
-      <div
-        id="navMenu"
-        class="navbar-menu"
-        v-bind:class="isActive ? 'is-active' : ''"
-      >
+      <div id="navMenu" class="navbar-menu" v-bind:class="navShown ? 'is-active' : ''">
         <div class="navbar-end">
-          <router-link
-            class="navbar-item"
-            to="/"
-            @click.native="isActive = false"
-            >صفحه اصلی</router-link
-          >
-          <router-link
-            class="navbar-item"
-            to="/about"
-            @click.native="isActive = false"
-            >درباره من</router-link
-          >
+          <router-link class="navbar-item" to="/" @click.native="navShown = false">صفحه اصلی</router-link>
+          <router-link class="navbar-item" to="/about" @click.native="navShown = false">درباره من</router-link>
         </div>
       </div>
     </nav>
 
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -50,9 +42,18 @@
 export default {
   data() {
     return {
-      isActive: false,
+      navShown: false
     };
   },
+  methods: {
+    addtohtml() {
+      const el = document.body;
+      el.classList.add("has-navbar-fixed-top");
+    }
+  },
+  mounted() {
+    this.addtohtml();
+  }
 };
 </script>
 

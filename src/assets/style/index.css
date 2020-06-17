@@ -138,8 +138,9 @@ body {
 
 /* Home */
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
@@ -152,6 +153,7 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   text-align: right;
   cursor: pointer;
+  padding-bottom: 0.15rem;
 }
 
 .post-item .frame {
