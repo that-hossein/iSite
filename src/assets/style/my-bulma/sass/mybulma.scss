@@ -1,13 +1,12 @@
 @charset "utf-8";
 
 // Colors
-$light-gray: #f5f6fa;
+$lighter-gray: #f5f6fa;
 $light-blue: #03a9f4;
 
 // Bulma global variables
-$body-background-color: $light-gray !important;
+$body-background-color: $lighter-gray !important;
 $primary: $light-blue;
-
 
 // Update some of Bulma's component variables
 $control-border-width: 2px;
